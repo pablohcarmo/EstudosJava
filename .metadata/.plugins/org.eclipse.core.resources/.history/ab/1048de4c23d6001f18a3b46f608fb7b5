@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//Exercício 1
+		/*
+		System.out.print("Digite um número: ");
+		int numero = sc.nextInt();
+		sc.close();
+		if(numero > 0) {
+			System.out.printf("O número %d é positivo!", numero);
+		} else {
+			System.out.printf("O número %d é negativo", numero);
+		}
+		
+		//Exercício 2
+		System.out.print("Digite um número: ");
+		int numero = sc.nextInt();
+		sc.close();
+		
+		if (numero % 2 == 0){
+			System.out.printf("O número %d é par!", numero);
+		} else {
+			System.out.printf("O número %d é impar!", numero);
+		}
+		
+		//Exercício 3
+		System.out.print("Digite o primeiro número: ");
+		int A = sc.nextInt();
+		System.out.print("\nDigite o primeiro número: ");
+		int B = sc.nextInt();
+		sc.close();
+		if(A % B == 0 || B % A == 0) {
+			System.out.print("São múltiplos!");
+		} else {
+			System.out.print("Não são múltiplos!");
+		}*/
+		
+		//Exercício 4
+		System.out.print("Digite o horário do início do jogo: ");
+		int horaInicial = sc.nextInt();
+		System.out.print("\nDigite o horário do final do jogo: ");
+		int horaFinal = sc.nextDouble();
+		int totalHoras;
+		int minHoras = 1;
+		int maxHoras = 24;
+		sc.close();
+				
+		
+		
+		
+	}
+}

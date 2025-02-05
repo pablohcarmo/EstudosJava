@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//Exercício 1
+		/*
+		System.out.print("Digite um número: ");
+		int numero = sc.nextInt();
+		sc.close();
+		if(numero > 0) {
+			System.out.printf("O número %d é positivo!", numero);
+		} else {
+			System.out.printf("O número %d é negativo", numero);
+		}*/
+		
+		//Exercício 2
+		System.out.print("Digite um número: ");
+		int numero = sc.nextInt();
+		sc.close();
+		
+		if (numero % 2 == 0){
+			System.out.printf("O número %d é par!", numero);
+		} else {
+			System.out.printf("O número %d é impar!", numero);
+		}
+	}
+}
