@@ -3,6 +3,7 @@ package Application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Student;
 import entities.Employee;
 import entities.Rectangle;
 
@@ -12,8 +13,31 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		// Exercício 3
+		Student student = new Student();
 		
+		System.out.print("Student name: ");
+		student.name = sc.nextLine();
+		System.out.print("Enter the 1st trimester grades: ");
+		student.grade1 = sc.nextDouble();
+		while (student.grade1 > 30) {
+			System.out.print("Invalid grade, enter again: ");
+			student.grade1 = sc.nextDouble();
+		}
+		System.out.print("Enter the 2nd trimester grades: ");
+		student.grade2 = sc.nextDouble();
+		while (student.grade2 > 35) {
+			System.out.print("Invalid grade, enter again: ");
+			student.grade2 = sc.nextDouble();
+		}
+		System.out.printf("Enter the 3rd trimester grades: ");
+		student.grade3 = sc.nextDouble();
+		while (student.grade3 > 35) {
+			System.out.print("Invalid grade, enter again: ");
+			student.grade3 = sc.nextDouble();
+		}
+		student.showGrades();
 		
+		sc.close();
 		
 		/*
 		// Exercício 2
