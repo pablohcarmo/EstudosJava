@@ -14,15 +14,16 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Account account = new Account();
+		//Account account = new Account();
+		Account account;
 		
 		System.out.print("Enter account number: ");
 		accountNumber = sc.nextInt();
-		account.setAccountNumber(accountNumber);
+		//account.setAccountNumber(accountNumber);
 		
 		System.out.print("Enter account holder: ");
-		accountHolder = sc.next();
-		account.setAccountHolder(accountHolder);
+		accountHolder = sc.nextLine();
+		//account.setAccountHolder(accountHolder);
 		
 		sc.next();
 		System.out.print("Is there an initial deposit (y/n)? ");
@@ -35,17 +36,22 @@ public class Main {
 		if (confirm == 'y' || confirm == 'Y') {
 			System.out.print("Enter initial deposit value: ");
 			balance = sc.nextDouble();
-			account.deposit(balance);
-			System.out.print("Account data:\n" + account.toString());
-		} else if (confirm == 'n' || confirm == 'N'){
+			account = new Account(accountNumber, accountHolder, balance);
+			//account.deposit(balance);
+			//System.out.print("Account data:\n" + account.toString());
+		} else /*if (confirm == 'n' || confirm == 'N')*/{
+			account = new Account(accountNumber, accountHolder);
 			System.out.print("Account data:\n" + account.toString());
 		}
 		System.out.print("\n\nEnter a deposit value: ");
 		balance = sc.nextDouble();
 		account.deposit(balance);
-		System.out.print("Updated account data:\n" + account.toString());
+		System.out.print("Updated account data:\n" + account);
 		
 		System.out.print("\n\nEnter a withdraw value: ");
+		balance = sc.nextDouble();
+		account.withdraw(balance);
+		System.out.print("Updated account data:\n" + account);
 		
 		sc.close();
 	}
