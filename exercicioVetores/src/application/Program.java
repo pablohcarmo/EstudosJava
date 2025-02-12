@@ -1,6 +1,7 @@
 package application;
 
 import entites.Person;
+import entites.Student;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -172,6 +173,120 @@ public class Program {
 				System.out.println(vect[i]);
 			}
 		}
+		sc.close();
 		*/
+		/*
+		// Exercício 8 - Problema "media_pares"
+		System.out.print("Quantos elementos o vetor terá? ");
+		int n = sc.nextInt();
+		int[] vect = new int[n];
+		int sum = 0;
+		int sumPares = 0;
+		
+		for(int i = 0; i < vect.length; i++) {
+			System.out.print("Digite um número: ");
+			vect[i] = sc.nextInt();
+			if(vect[i] % 2 == 0) {
+				sum += vect[i];
+				sumPares++;
+			}
+		}
+		double average = (double) sum / sumPares;
+		if(sum == 0) {
+			System.out.println("NENHUM NUMERO PAR");
+		} else {
+			System.out.printf("MEDIA DOS PARES = %.1f", average);	
+		}
+		sc.close();
+		*/
+		
+		/*
+		// Exercício 9 - Problema "mais_velho"
+		System.out.print("Quantas pessoas você vai digitar? ");
+		int n = sc.nextInt();
+		Person[] person = new Person[n]; 
+		int older = 0;
+		int position = 0;
+		
+		for(int i = 0; i < person.length; i++) {
+			sc.nextLine();
+			System.out.printf("Dados da %dª pessoa:\nNome: ", i + 1);
+			String name = sc.nextLine();
+			System.out.print("Idade: ");
+			int age = sc.nextInt();
+			person[i] = new Person(name, age);
+			
+			if(person[i].getAge() > older) {
+				older = person[i].getAge();
+				position = i;
+			}
+		}
+		System.out.printf("PESSOA MAIS VELHA: %s", person[position].getName());
+		
+		sc.close();
+		*/
+		
+		/*
+		// Exercício 10 - Problema "aprovados"
+		System.out.print("Quantos alunos serão digitados? ");
+		int n = sc.nextInt();
+		Student[] students = new Student[n];
+		
+		sc.nextLine();
+		for(int i = 0; i < students.length; i++) {
+			System.out.printf("Digite o nome, a primeira e a segunda nota do %dº aluno: %n", i + 1);
+			String name = sc.nextLine();
+			double grade1 = sc.nextDouble();
+			double grade2 = sc.nextDouble();
+			sc.nextLine();
+			students[i] = new Student(name, grade1, grade2);
+		}
+		
+		System.out.println("Alunos aprovados:");
+		for(int i = 0; i <students.length; i++) {
+			if(students[i].average() >= 6.0) {
+				System.out.println(students[i].getName());
+			}
+		}
+		
+		sc.close();
+		*/
+		
+		// Exercício 11 - Problema "dados_pessoas"
+		double taller = 0.0;
+		double smaller = 10;
+		int numberOfMens = 0;
+		int numberOfWomens = 0;
+		double avgWomensHeigth = 0.0;
+		double sumWomensHeigth = 0.0;
+		System.out.print("Quantas pessoa serão digitadas? ");
+		int n = sc.nextInt();
+		Person[] people = new Person[n];
+		sc.nextLine();
+		
+		for(int i = 0; i < people.length; i++) {
+			System.out.printf("Altura da %dª pessoa: ", i + 1);
+			double heigth = sc.nextDouble();
+			System.out.printf("Gênero da %dª pessoa: ", i + 1);
+			char gender = sc.next().charAt(0);
+			sc.nextLine();
+			people[i] = new Person(heigth, gender);
+			
+			if(people[i].getHeigth() > taller) {
+				taller = people[i].getHeigth();
+			} else if(people[i].getHeigth() < smaller){
+				smaller = people[i].getHeigth();
+			}
+			
+			if(people[i].getGender() == 'M' || people[i].getGender() == 'm') {
+				numberOfMens++;
+			} else if (people[i].getGender() == 'F' || people[i].getGender() == 'f') {
+				sumWomensHeigth += people[i].getHeigth();
+				numberOfWomens++;
+			}
+		}
+		avgWomensHeigth = sumWomensHeigth / numberOfWomens;
+		System.out.printf("Menor altura = %.2f\nMaior altura = %.2f\nMédia das alturas das mulheres = %.2f\nNumero de homens = %d", smaller, taller, avgWomensHeigth, numberOfMens);
+		sc.close();
 	}
 }
